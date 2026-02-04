@@ -1,6 +1,5 @@
 # datbase connection and session management
 
-from curses import echo
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base

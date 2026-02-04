@@ -37,9 +37,9 @@ class User(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
-    # relationships- connections to other tables, a customer can have multiple loans and loan applications
-    loans = relationship("Loan", back_populates="borrower", cascade="all, delete-orphan")
-    loan_applications = relationship("LoanApplication", back_populates="applicant", cascade="all, delete-orphan")
+    # relationships - connections to other tables, a customer can have multiple loans and loan applications
+    loans = relationship("Loan", back_populates="borrower", cascade="all, delete-orphan", foreign_keys="[Loan.borrower_id]")
+    loan_applications = relationship("LoanApplication", back_populates="applicant", cascade="all, delete-orphan", foreign_keys="[LoanApplication.applicant_id]")
     
     def __repr__(self):
         return f"<User id={self.id} username={self.username} email={self.email} role={self.role}>"

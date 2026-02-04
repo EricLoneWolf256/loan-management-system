@@ -12,6 +12,8 @@ class Settings(BaseSettings):
     
     # applicanion
     APP_NAME: str = "Loan Management System"
+    PROJECT_NAME: str = "Loan Management System"
+    VERSION: str = "1.0.0"
     DEBUG: bool = False
     API_V1_PREFIX: str = "/api/v1"
     

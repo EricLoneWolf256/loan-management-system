@@ -1,8 +1,8 @@
-# payment schemas API contracts for payment operations
-from pydantics import BaseModel, Field
+# payment schemas - API contracts for payment operations
+from pydantic import BaseModel, Field
 from typing import Optional 
 from datetime import datetime, date
-from.app.models.payment import PaymentStatus
+from app.models.payment import PaymentStatus
 
 # repayment schedule schemas
 class RepaymentScheduleBase(BaseModel):

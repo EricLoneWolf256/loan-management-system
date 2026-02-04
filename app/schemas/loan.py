@@ -1,13 +1,8 @@
-# laon shemas -Api contracts for loan operations
-import dis
-from email.mime import application
-from operator import gt
-from tracemalloc import start
-from urllib import request
-from pydantics import BaseModel, Field
+# loan schemas - API contracts for loan operations
+from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime
-from.app.models.loan import LoanType, LoanStatus    
+from app.models.loan import LoanType, LoanStatus    
 
 
 # loan application schemas

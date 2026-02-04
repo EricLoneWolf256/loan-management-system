@@ -1,9 +1,9 @@
 # what fields are required, what's optional, what format.
-import email
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 from datetime import datetime
-from.app.models.user import UserRole
+from app.models.user import UserRole
+
 
 class UserBase(BaseModel):
     # shared properties for user
@@ -27,6 +27,7 @@ class UserUpdate(BaseModel):
     is_active: Optional[bool] = None
     role: Optional[UserRole] = None
     
+    
 class UserInDBBase(UserBase):
     # properties stored in the database
     id: int
@@ -48,19 +49,20 @@ class UserResponse(UserBase):
     is_superuser: bool
     created_at: datetime
     updated_at: Optional[datetime] = None
+    
     class Config:
         from_attributes = True
         
-        
+
 class Token(BaseModel):
     # Authentication token response model
     access_token: str
     token_type: str = "bearer"
     
+
 class TokenData(BaseModel):
-    # data stored inside the JWT token
-    user_id: Optional[int] = None
-    email: Optional[EmailStr] = None
+    # Data stored inside the JWT token
+    username: Optional[str] = None
 
 
 
